@@ -1,3 +1,9 @@
 
-<h2>{{ $movie->title }}</h2>
-<p>{{ $movie->storyline }}</p>
+@extends('layouts.master')
+@section('title', 'Show')
+@section('content')
+  <h2>{{ $movie->title }}</h2>
+
+@endsection
+
+
