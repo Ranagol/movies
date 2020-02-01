@@ -3,11 +3,12 @@
 @section('title', 'Index')
 @section('content')
   <ul>
+    <!--MOVIE DISPLAYING -->
     @foreach($movies as $movie)
-    <li>
+    <li>Title: 
       <a href="/movies/{{ $movie->id }}">{{ $movie->title}}
       </a>
-      <p>{{ $movie->storyline }}</p>
+      <p>Storyline: {{ $movie->storyline }}</p>      
     </li>
     @endforeach
   </ul>

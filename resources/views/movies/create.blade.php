@@ -9,19 +9,19 @@
 
 <form method="POST" action="/movies">
   @csrf
-  <div class="form-group">
+  <div class="form-group">Movie title: 
     <input type="text" class="form-control"  placeholder="movie title" name="title" value = {{old('title')}}>
   </div>
-  <div class="form-group">
+  <div class="form-group"> Genre:
     <input type="text" class="form-control"  placeholder="movie genre" name="genre"  value = {{old('genre')}}>
   </div>
-  <div class="form-group">
+  <div class="form-group"> Director: 
     <input type="text" class="form-control"  placeholder="director" name="director"  value = {{old('director')}}>
   </div>
-  <div class="form-group">
+  <div class="form-group">Year: 
     <input type="text" class="form-control"  placeholder="year" name="year"  value = {{old('year')}}>
   </div>
-  <div class="form-group">
+  <div class="form-group">Storyline: 
     <input type="text" class="form-control"  placeholder="storyline" name="storyline"  value = {{old('storyline')}}>
   </div>
   

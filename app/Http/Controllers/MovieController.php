@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Movie;
+use App\Comment;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -51,6 +52,8 @@ class MovieController extends Controller
         $movie->storyline = $request->storyline;
         $movie->save();
         return redirect('/movies');
+
+        
     }
 
     /**
@@ -61,7 +64,10 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        return view('movies.show', compact('movie'));
+        //return view('movies.show', compact('movie'));
+        
+        $comments = $movie->comments;
+        return view('movies.show', compact('movie', 'comments'));
     }
 
     /**
