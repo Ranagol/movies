@@ -1,4 +1,5 @@
 <?php
+use App\Movie;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,10 @@ Route::post('/movies', 'MovieController@store');
 
 Route::post('/movies/{movie}/comments', 'CommentController@store');
 
-Route::get('/genres/{genre}', 'GenreController@show');
+//Route::get('/genres/{genre}', 'GenreController@show');
 
-
+Route::get('/genres/{genre}', function ($genre) {
+    $genreMovies = Movie::where('genre', $genre)->get();
+    $last5movies = Movie::orderBy('created_at', 'desc')->take(5)->get();
+    return view('movies.genre', compact('genreMovies', 'last5movies'));
+});
