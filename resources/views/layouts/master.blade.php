@@ -9,17 +9,8 @@
 </head>
 <body>
   <main class="container">
-    <section>
-      @include('layouts.navbar')
-      <div class="d-flex flex-row">
-        <div class="col-9">
-          @yield('content')
-        </div>
-        <aside class="alert alert-dark col-3">
-          @include('layouts.sidebar')
-        </aside>
-      </div>
-    </section>
+    @include('layouts.navbar')
+    @yield('content')
   </main>
 </body>
 </html>
