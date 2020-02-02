@@ -4,7 +4,7 @@
 @section('content')
   <!--PRIKAZIVANJE SVIH DETALJA FILMA -->
   <h2>Movie title: {{ $movie->title }}</h2>
-  <p>Genre: {{ $movie->genre }}</p>
+  <p>Genre: <a href="/genres/{{ $movie->genre }}">{{ $movie->genre }}</a> </p>
   <p>Director: {{ $movie->director }}</p>
   <p>Year: {{ $movie->year }}</p>
   <p>Storyline: {{ $movie->storyline }}</p>

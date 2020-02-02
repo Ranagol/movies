@@ -10,10 +10,10 @@
 <form method="POST" action="/movies">
   @csrf
   <div class="form-group">Movie title: 
-    <input type="text" class="form-control"  placeholder="movie title" name="title" value = {{old('title')}} required>
+    <input type="text" class="form-control" required  placeholder="movie title" name="title" value = {{old('title')}} >
   </div>
   <div class="form-group"> Genre:
-    <input type="text" class="form-control"  placeholder="movie genre" name="genre"  value = {{old('genre')}} required>
+    <input type="text" required class="form-control"  placeholder="movie genre" name="genre"  value = {{old('genre')}} >
   </div>
   <div class="form-group"> Director: 
     <input type="text" class="form-control"  placeholder="director" name="director"  value = {{old('director')}}>
