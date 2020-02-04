@@ -28,17 +28,13 @@ Route::post('/movies/{movie}/comments', 'CommentController@store');
 
 Route::get('/genres/{genre}', 'GenreController@show');
 
+/*
+dodati watched kolonu u movies. Ako je ovo true, ne sme da se pokazuje u index listi. Watched moze da se namesti u formi za slanje. Mora da se radi modifikacija table sa migracijom.
 
 
 
-
-
-
-
-/* ovo vise ne treba, problem je resen a u GenreController
-Route::get('/genres/{genre}', function ($genre) {
-    $genreMovies = Movie::where('genre', $genre)->get();
-    $last5movies = Movie::orderBy('created_at', 'desc')->take(5)->get();
-    return view('movies.genre', compact('genreMovies', 'last5movies'));
-});
 */
+
+
+
+

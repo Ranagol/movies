@@ -15,7 +15,8 @@
           @foreach($movies as $movie)
             <li>Title: 
               <a href="/movies/{{ $movie->id }}">{{ $movie->title}}</a>
-              <p>Storyline: {{ $movie->storyline }}</p> 
+              <p>Storyline: {{ $movie->storyline }}</p>
+              <p>Watched: {{ $movie->watched }}</p>
             </li>
           @endforeach
         </ul>

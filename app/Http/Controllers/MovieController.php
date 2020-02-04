@@ -15,7 +15,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::all();
+        //$movies = Movie::all();
+        $movies = Movie::where('watched', false)->get();
         $last5movies = Movie::orderBy('created_at', 'desc')->take(5)->get();
         return view('movies.index', compact('movies', 'last5movies'));
     }
@@ -43,6 +44,7 @@ class MovieController extends Controller
             'genre' => 'required|min:3',
             'year' => 'integer|between:1920,2020',
             'storyline' => 'max:1000',
+            'watched' => 'required',
         ]);
         
         $movie = new Movie;
@@ -51,6 +53,7 @@ class MovieController extends Controller
         $movie->director = $request->director;
         $movie->year = $request->year;
         $movie->storyline = $request->storyline;
+        $movie->watched = $request->watched;
         $movie->save();
         return redirect('/movies');
 
