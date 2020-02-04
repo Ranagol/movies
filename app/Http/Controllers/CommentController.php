@@ -14,7 +14,7 @@ class CommentController extends Controller
             'content' => 'required|min:3',
         ]);
 
-        //movie_id mora biti validiran
+        
         $comment = new Comment;
         $comment->movie_id = $movie->id;
         $comment->content = $request->content;
