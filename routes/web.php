@@ -28,9 +28,12 @@ Route::post('/movies/{movie}/comments', 'CommentController@store');
 
 Route::get('/genres/{genre}', 'GenreController@show');
 
+Route::patch('/watched/{movie}', 'MovieController@updateWatched');
+
+
+
 /*
 dodati watched kolonu u movies. Ako je ovo true, ne sme da se pokazuje u index listi. Watched moze da se namesti u formi za slanje. Mora da se radi modifikacija table sa migracijom.
-
 
 
 */

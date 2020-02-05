@@ -83,6 +83,19 @@ class MovieController extends Controller
         //
     }
 
+    //*********************************************** */
+    public function updateWatched(Request $request, Movie $movie)
+    {
+        $movie->watched =$request->watched;
+        $movie->save();
+        return redirect('/movies');
+    }
+    //********************************************** */
+
+
+
+
+
     /**
      * Update the specified resource in storage.
      *
